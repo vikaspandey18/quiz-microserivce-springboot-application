@@ -20,4 +20,9 @@ public class QuestionService {
     public List<Question> getQuestionsByCategory(String category) {
         return questionRepository.findByCategoryIgnoreCase(category);
     }
+
+    public String addQuestion(Question question) {
+        questionRepository.save(question);
+        return "Save Successfully";
+    }
 }
